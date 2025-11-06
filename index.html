@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Torneo de Tercia - Copa Steel Arm</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://kit.fontawesome.com/a2d5b6b7b9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section id="hero" class="text-center d-flex flex-column justify-content-center align-items-center">
+    <h1 class="display-4 fw-bold text-gold">Torneo de Tercia</h1>
+    <h2 class="fw-bold text-white">Copa Steel Arm</h2>
+    <a href="#registro" class="btn btn-danger mt-4 btn-lg fw-bold">Inscribirme Ahora</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container text-center py-5">
+    <h2 class="text-gold fw-bold mb-4">Detalles del Torneo</h2>
+    <p class="text-light fs-5">
+      🗓️ <strong>Domingo 30 de noviembre</strong><br>
+      🕐 <strong>Inscripciones y pesaje desde la 1:00 PM</strong><br>
+      💪 <strong>Inicio del evento antes de las 4:00 PM</strong><br>
+      🏆 <strong>Uno de los torneos de tercia más grandes de Nicaragua</strong>
+    </p>
+  </section>
+
+<!-- Registration Section -->
+<section id="registro" class="py-5 bg-dark text-white">
+  <div class="container">
+    <h2 class="text-center text-gold mb-4 fw-bold">Formulario de Inscripción</h2>
+    <form action="https://formsubmit.co/rayoadriangamaliel@gmail.com" method="POST" enctype="multipart/form-data" class="row g-3 p-3 rounded-4 bg-black shadow-lg">
+
+      <div class="col-md-6">
+        <label for="nombre" class="form-label text-gold">Nombre</label>
+        <input type="text" class="form-control bg-dark text-white border-gold" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="apellido" class="form-label text-gold">Apellido</label>
+        <input type="text" class="form-control bg-dark text-white border-gold" id="apellido" name="apellido" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="edad" class="form-label text-gold">Edad</label>
+        <input type="number" class="form-control bg-dark text-white border-gold" id="edad" name="edad" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="categoria" class="form-label text-gold">Categoría</label>
+        <select class="form-select bg-dark text-white border-gold" id="categoria" name="categoria" required>
+          <option value="" selected disabled>-- Selecciona --</option>
+          <option>Junior (hasta 18 años)</option>
+          <option>Hasta 180 lbs</option>
+          <option>Senior 70 kg</option>
+          <option>Senior 80 kg</option>
+          <option>Senior 90 kg</option>
+          <option>Senior +90 kg</option>
+          <option>Femenina Libre (Brazo Derecho)</option>
+        </select>
+      </div>
+
+      <!-- Baucher de pago -->
+      <div class="col-12">
+        <label for="baucher" class="form-label text-gold">Comprobante de pago (baucher)</label>
+        <input type="file" class="form-control bg-dark text-white border-gold" id="baucher" name="baucher" accept="image/*" required>
+        <small class="text-secondary">Sube una imagen clara del baucher de tu pago.</small>
+      </div>
+
+      <!-- Vista previa -->
+      <div class="col-12 text-center mt-3">
+        <img id="preview" src="#" alt="Vista previa del baucher" class="img-fluid rounded-3 shadow-lg d-none" style="max-height: 250px;">
+      </div>
+
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-danger px-5 py-2 fw-bold mt-3">Enviar Inscripción</button>
+      </div>
+
+      <!-- Configuración oculta para formsubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+    </form>
+  </div>
+</section>
+
+<!-- Script para vista previa del baucher -->
+<script>
+  const inputBaucher = document.getElementById('baucher');
+  const previewImg = document.getElementById('preview');
+
+  inputBaucher.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        previewImg.src = event.target.result;
+        previewImg.classList.remove('d-none');
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
+
+  <!-- Payment Section -->
+  <section id="pago" class="container text-center py-5">
+    <h2 class="text-gold fw-bold mb-3">Pagos e Información</h2>
+    <p class="text-light fs-5">
+      💵 Cada categoría tiene un costo de <strong>100 C$</strong>.<br>
+      Si deseas participar en otra categoría, paga 100 C$ adicionales.<br>
+      Puedes pagar el día del evento o enviar a <strong>Billetera Móvil Banpro</strong> número <strong>89189663</strong> a nombre de <strong>Adrián Rayo Obando</strong>.<br>
+      Envía tu comprobante por WhatsApp al <strong>89189663</strong>.
+    </p>
+  </section>
+
+  <!-- Countdown -->
+  <section id="countdown" class="text-center bg-black text-gold py-5">
+    <h2 class="fw-bold mb-4">Cuenta regresiva para el torneo</h2>
+    <div id="timer" class="display-6 fw-bold"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="text-center py-5">
+    <h2 class="text-gold fw-bold mb-4">Contacto</h2>
+    <a href="https://wa.me/50589189663" target="_blank" class="btn btn-success btn-lg fw-bold">
+      <i class="fab fa-whatsapp"></i> WhatsApp del Organizador
+    </a>
+  </section>
+
+  <footer class="text-center py-4 bg-dark text-light">
+    <p>© 2025 Torneo de Tercia - Copa Steel Arm | <a href="https://wa.me/50582246593" target="_blank">Obtén tu página web profesional hoy mismo</a>
+</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Countdown Script -->
+  <script>
+    const targetDate = new Date("November 30, 2025 16:00:00").getTime();
+    const timer = document.getElementById("timer");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timer.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        timer.innerHTML = "¡El torneo ha comenzado!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+/* ==== GENERAL ==== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600&display=swap');
+
+body {
+  background-color: #0b0b0b;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==== HERO ==== */
+#hero {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(15,15,15,0.95) 100%),
+              url('/Img/adrian.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero img {
+  width: 180px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 20px #b22222);
+}
+
+#hero h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #ff0000, 0 0 40px #c2a95f;
+}
+
+#hero h2 {
+  color: #c2a95f;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 15px #b22222;
+}
+
+#hero .btn-danger {
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #b22222, #ff4444);
+  border: none;
+  font-weight: bold;
+  padding: 12px 40px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+#hero .btn-danger:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #ff4444;
+}
+
+/* ==== SECTIONS ==== */
+section {
+  padding: 80px 0;
+}
+
+.text-gold {
+  color: #c2a95f;
+}
+
+/* ==== ABOUT ==== */
+#about {
+  background: linear-gradient(180deg, #111 0%, #0b0b0b 100%);
+  border-top: 2px solid #c2a95f;
+}
+
+#about p {
+  font-size: 1.2rem;
+}
+
+/* ==== FORMULARIO ==== */
+#registro {
+  background: linear-gradient(180deg, #0c0c0c 0%, #141414 100%);
+}
+
+form {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #c2a95f;
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 0 20px rgba(194, 169, 95, 0.5);
+}
+
+label {
+  font-weight: 600;
+  color: #c2a95f;
+}
+
+.form-control, .form-select {
+  background-color: #121212 !important;
+  color: #fff !important;
+  border: 2px solid #333 !important;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #b22222 !important;
+  box-shadow: 0 0 15px #b22222 !important;
+}
+
+button.btn-danger {
+  background: linear-gradient(90deg, #b22222, #ff5555);
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button.btn-danger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #b22222;
+}
+
+/* ==== PAGOS ==== */
+#pago {
+  background: #0b0b0b;
+  border-top: 2px solid #b22222;
+}
+
+/* ==== COUNTDOWN ==== */
+#countdown {
+  background: radial-gradient(circle at top, #111 0%, #000 100%);
+  text-align: center;
+  padding: 60px 0;
+  border-top: 2px solid #c2a95f;
+}
+
+#timer {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff4444;
+  text-shadow: 0 0 15px #c2a95f;
+}
+
+/* ==== CONTACTO ==== */
+#contacto {
+  background: #0d0d0d;
+}
+
+.btn-success {
+  background: linear-gradient(90deg, #25D366, #1EBE57);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #25D366;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  background: #000;
+  color: #bbb;
+  padding: 20px;
+  border-top: 2px solid #c2a95f;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+  #hero h2 {
+    font-size: 1.5rem;
+  }
+  form {
+    padding: 1rem;
+  }
+}
